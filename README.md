@@ -32,3 +32,13 @@ To program the FPGA you will need a USB Blaster.
 
 
 ## License
+
+![open hardware](/images/1024px-Open-source-hardware-logo.svg.png)
+
+This work is licensed under the CERN OHL-S v2. You may redistribute and modify this project and its documentation under the terms of the CERN-OHL-S v2.
+
+This project is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
+
+You should have received a copy of the CERN-OHL-S along with this project. If not, see <https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2>.
+
+
