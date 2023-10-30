@@ -13,6 +13,10 @@ This is a simple MSX2+ hardware implemented using FPGA. It is based on the origi
 * Support for PS/2 keyboards (PS/2 or USB)
 * Support for microSD cards
 * Support for MSX cartridges (2 slots)
+* Two joystick ports
+* Wireless Network support (ESP8266)
+* 12V lines for the cartridges
+
 
 ## Bill of materials
 
