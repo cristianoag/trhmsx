@@ -6,10 +6,10 @@
 
   (title_block
     (title "TRHMSX - The simple MSX2+ clone in FPGA")
-    (date "2023-11-19")
+    (date "2023-11-26")
     (rev "1.0")
     (company "The Retro Hacker")
-    (comment 4 "TRHMSX v1.0")
+    (comment 4 "TRHMSX")
   )
 
   (lib_symbols
