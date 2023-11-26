@@ -12,6 +12,8 @@ This FPGA-based MSX2+ hardware represents a straightforward implementation, draw
 
 The core of this system is the Cyclone II FPGA, accompanied by a few additional components. The PCB is a 4-layer board measuring 12x15 cm. The FPGA is a 240-pin package, which is challenging to solder manually. Instead, using an SMT oven or a hot air station is advised for optimal results. For those opting for a hot air station, employing a stencil to apply solder paste is highly recommended, significantly streamlining the assembly process.
 
+![Alt text](images/2023-11-26_15-43.png)
+
 Programming the FPGA requires the well-known KDL ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
 
 ## Features
