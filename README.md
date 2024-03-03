@@ -6,13 +6,15 @@ This synthesis enables enthusiasts to experience the charm of MSX systems withou
 
 This modern approach not only preserves the nostalgia associated with MSX but also opens up possibilities for enhancements and customizations. FPGA synthesis ensures that the MSX spirit endures, catering to both seasoned aficionados and new generations eager to explore the roots of personal computing.
 
-# TRHMSX - The Simple FPGA MSX2+ clone
+**WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
+
+# TRHMSX - A Simple FPGA MSX2+ clone (with additional features)
 
 This FPGA-based MSX2+ hardware represents a straightforward implementation, drawing inspiration from the original 1chipMSX circuit but featuring several enhancements and a new PCB design for improved functionality. Despite its advanced capabilities, the primary focus during development was on maintaining a low-cost solution.
 
 The core of this system is the Cyclone II FPGA, accompanied by a few additional components. The PCB is a 4-layer board measuring 12x15 cm. The FPGA is a 240-pin package, which is challenging to solder manually. Instead, using an SMT oven or a hot air station is advised for optimal results. For those opting for a hot air station, employing a stencil to apply solder paste is highly recommended, significantly streamlining the assembly process.
 
-![Alt text](images/2023-11-26_15-43.png)
+![Alt text](images/2024-02-25_20-27.png)
 
 Programming the FPGA requires the well-known KDL ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
 
@@ -56,17 +58,30 @@ To build the project you will need the following tools and resources:
 
 ## Programming
 
+### FPGA
 To program the FPGA you will need a USB Blaster. 
 [More info to come]
 
+### ESP8266
+To program the ESP8266 you will need a USB to Serial adapter.
+[More info to come]
+
+### microSD Card
+To use the microSD card you will need... [More info to come]
+
 ## License
 
-![open hardware](/images/1024px-Open-source-hardware-logo.svg.png)
+![Open Hardware](images/ccans.png)
 
-This work is licensed under the CERN OHL-S v2. You may redistribute and modify this project and its documentation under the terms of the CERN-OHL-S v2.
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-This project is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
+* If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+* You may not use the material for commercial purposes.
+* You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
-You should have received a copy of the CERN-OHL-S along with this project. If not, see <https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2>.
+**ATTENTION**
 
+This project was made for the retro community and not for commercial purposes. So only retro hardware forums and individual people can build this project.
+
+THE SALE OF ANY PART OF THIS PROJECT WITHOUT EXPRESS AUTHORIZATION IS PROHIBITED!
 
