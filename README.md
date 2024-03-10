@@ -6,13 +6,19 @@ This synthesis enables enthusiasts to experience the charm of MSX systems withou
 
 This modern approach not only preserves the nostalgia associated with MSX but also opens up possibilities for enhancements and customizations. FPGA synthesis ensures that the MSX spirit endures, catering to both seasoned aficionados and new generations eager to explore the roots of personal computing.
 
-# TRHMSX - The Simple FPGA MSX2+ clone
+**WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
+
+# TRHMSX - A Simple FPGA MSX2+ clone (with additional features)
 
 This FPGA-based MSX2+ hardware represents a straightforward implementation, drawing inspiration from the original 1chipMSX circuit but featuring several enhancements and a new PCB design for improved functionality. Despite its advanced capabilities, the primary focus during development was on maintaining a low-cost solution.
 
-The core of this system is the Cyclone II FPGA, accompanied by a few additional components. The PCB is a 4-layer board measuring 12x15 cm. The FPGA is a 240-pin package, which is challenging to solder manually. Instead, using an SMT oven or a hot air station is advised for optimal results. For those opting for a hot air station, employing a stencil to apply solder paste is highly recommended, significantly streamlining the assembly process.
+The core of this system is the Cyclone I FPGA, accompanied by a few additional components. The PCB is a 4-layer board measuring 12x15 cm. The FPGA is a 240-pin package, which is challenging to solder manually. Instead, using an SMT oven or a hot air station is advised for optimal results. For those opting for a hot air station, employing a stencil to apply solder paste is highly recommended, significantly streamlining the assembly process.
 
-![Alt text](images/2023-11-26_15-43.png)
+
+| kicad 3D model | First prototype|
+|---------|---------|
+| ![Alt text](images/2024-02-25_20-27.png) | ![Alt text](images/20240229_213756238_iOS%20(Medium).jpg) |
+
 
 Programming the FPGA requires the well-known KDL ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
 
@@ -56,17 +62,80 @@ To build the project you will need the following tools and resources:
 
 ## Programming
 
+### FPGA
 To program the FPGA you will need a USB Blaster. 
 [More info to come]
 
+### Wireless Network Module
+
+Wireless network access in the TRH MSX is performed by the use of a 8266 ESP-01 module by Espressif and via the ESP8266 Wi-Fi Support Pack v1.0 shared by KDL as the result of the work of Oduvaldo Pavan Jr. The software created by Oduvaldo is licensed under the GNU Lesser General Public License v2.1 as open source and it is available both from the KDL original web page as well as directly from Oduvaldo's GitHub repository at https://github.com/ducasp/ESP8266-UNAPI-Firmware/ 
+
+Note: Oduvaldo has been working in optimized versions of the ESP8266 module to be used with other FPGA based computers and those may not be compatible with the TRHMSX. Please use the one shared by KDL as it was built to be used with the basic Verilog/VHDL ESEMSX.
+
+#### Programming the ESP8266 module
+
+To program the ESP-01 module you will need a CH340 USB to ESP8266 ESP01 Serial Programmer like the one shown in the below picture. You can purchase one of those directly from AliExpress here (the link is also available on the Bill of Materials table in this document).
+
+![Programmer](images/image-18.png)
+
+Follow the instructions detailed below to program your ESP8266 module:
+
+1. Download the ESP8266 Wi-Fi Support Pack v1.0 from the KDL page here. 
+2. Make sure the switch on the programmer is configured to PROG.
+3. Connect the ESP-01 module to the programmer and insert it to your PC USB port. Open device manager and check the COM port assigned to the programmer. Make sure you have the appropriate CG340 driver installed, if required download and install the driver from wch.cn/downloads/CH341SER_EXE.html
+
+![Programmer](images/image-19.png)
+
+4. Download Espressif Flash Download Tools from Tools | Espressif Systems
+5. Unzip and execute the Flash Download tool from the downloaded zip package. 
+6. If asked, select the ESP8266 ChipType and Develop as the WorkMode. Click OK to run the flash download tool.
+
+![Programmer](images/image-20.png)
+
+7. Click the elipsis on the first two lines and make sure to select certs.bin and fw.bin from the package downloaded from the KDL page. Those files are located on the bin folder after unziping the package.  Use 0x0 as the start address for fw.bin and 0xbb000 for certs.bin. Also make sure to select the same COM port as the port identified previously as being used by the CH340 programmer. Reference to the picture below when running the flash download tool to program your ESP8266 module.
+
+![Programmer](images/image-23.png)
+
+8. The ESP8266 is now ready to be inserted into the TRH MSX pin header dedicated to host the module.
+
+#### Using the TRHMSX with Wireless 
+
+To connect the TRHMSX to your wireless network you need first program the 8266 module according to the instructions previously documented. Then go ahead and plug the module to the appropriate pin headers on the board. Make sure you are connecting it with the right orientation. The location of the header was intentionally chosen to avoid wrong connections as the board cannot be over the SMD electrolytic capacitors located nearby.
+
+Now turn on the TRHMSX and push the F1 key. Keep it pushed until you see the message shown below.
+
+| Entering Network Setup | Config Menu|
+|---------|---------|
+![Programmer](images/image-27-1024x576.png)|![Programmer](images/image-28-1024x576.png)|
+
+Note that the second screen already shows it is connected to my local wireless network. You may get a message saying the module is still not connected to any access point. 
+
+Using option 3 you can select a network to connect and provide appropriate credentials. The other options change specific firmware configurations. Please consult the firmware documentation to obtain details on the options and specific configurations.
+
+After connecting the module to your wireless network you can use any UNAPI compatible tool from the computer. Just be aware that the AT firmware variant implemented by Oduvaldo doesn't support ICMP, thus the PING command that we normally use to test the OBSONETs and other traditional network cards will not work from the TRHMSX with the ESP8266 module.
+
+### +12V/-12V Cartridge Lines
+
+Certain MSX cartridges utilize both the +12V and -12V lines, such as specific variants of OPL4 cartridges and the RBSC Carnivore2. Those lines are crucial for powering the operational amplifiers responsible for audio output.
+
+In the case of the TRHMSX, the +-12V lines are generated through a simple board connected to the relevant pin headers on the motherboard. This board serves as a simple step-up mechanism and can easily be obtained from AliExpress here.
+
+### microSD Card
+To use the microSD card you will need... [More info to come]
+
 ## License
 
-![open hardware](/images/1024px-Open-source-hardware-logo.svg.png)
+![Open Hardware](images/ccans.png)
 
-This work is licensed under the CERN OHL-S v2. You may redistribute and modify this project and its documentation under the terms of the CERN-OHL-S v2.
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-This project is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
+* If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+* You may not use the material for commercial purposes.
+* You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
-You should have received a copy of the CERN-OHL-S along with this project. If not, see <https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2>.
+**ATTENTION**
 
+This project was made for the retro community and not for commercial purposes. So only retro hardware forums and individual people can build this project.
+
+THE SALE OF ANY PART OF THIS PROJECT WITHOUT EXPRESS AUTHORIZATION IS PROHIBITED!
 
