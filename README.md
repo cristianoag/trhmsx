@@ -63,8 +63,23 @@ To build the project you will need the following tools and resources:
 ## Programming
 
 ### FPGA
-To program the FPGA you will need a USB Blaster. 
-[More info to come]
+The firmware for the TRHMSX is based on the first generation esemsx VHDL/Verilog code. You can download the latest packages from KDL page here, or get the latest development versions directly from his GitHub here.
+
+If you are downloading from the page, you will need the OCM PLD Pack file. Download it and unzip its content in a local file on your PC. If you decide to use GitHub, clone the repository to your PC.
+
+After the unzip, go to the latest version folder and navigate to esemsx3 folder. Check the README file, you will see that you need a pretty old Quartus II version (v11.0 SP1). That is because you are using an obsolete Altera FPGA chip that cannot be programmed by recent versions of the software.
+
+Scrolling down on KDL page you will see a link to download the right version of Quartus. Download and install it.
+
+Note: I had issues with driver certificated for the USB blaster after installing this old version of Quartus. My USB blaster stopped working as the certificates for the driver in v11 are already expired. I reinstalled Quartus 20.1 after and everything worked fine.
+
+Follow the instructions on the README file to compile the appropriate files and program your FPGA. Make sure to follow the instruction to convert the programming file and incorporate the emsx_top_304k.cof file, that way you will have an MSX computer with the EPBIOS. Those steps ensure that you will have the basic BIOS together with the programming file stored on the EPCS4, that will be useful in case you have any issues with the microSD card slot.
+
+Connect your USB Blaster cable and use the Quartus programmer tool to upload the programming file to the EPCS4 flash.
+
+When you turn on your uMSX after assembling the PCB, all LEDs should lit. During programming they will flash, turn off and after boot, the uMSX will flash the last LED indicating it is loading the program to the FPGA chip, then it will lit only the LEDs that are correspondent to the configuration on the DIP switch bank.
+
+Turn on 2 and 3 to have a 30Khz video and the last one (8) so you enable the SD card. If you need to understand what each dip switch does, check those files: DIP-SW User Manual or Zemmix Manual.
 
 ### Wireless Network Module
 
@@ -76,7 +91,7 @@ Note: Oduvaldo has been working in optimized versions of the ESP8266 module to b
 
 To program the ESP-01 module you will need a CH340 USB to ESP8266 ESP01 Serial Programmer like the one shown in the below picture. You can purchase one of those directly from AliExpress here (the link is also available on the Bill of Materials table in this document).
 
-![Programmer](images/image-18.png)
+<img src="images/image-18.png" width="200" height="300">
 
 Follow the instructions detailed below to program your ESP8266 module:
 
@@ -84,13 +99,14 @@ Follow the instructions detailed below to program your ESP8266 module:
 2. Make sure the switch on the programmer is configured to PROG.
 3. Connect the ESP-01 module to the programmer and insert it to your PC USB port. Open device manager and check the COM port assigned to the programmer. Make sure you have the appropriate CG340 driver installed, if required download and install the driver from wch.cn/downloads/CH341SER_EXE.html
 
-![Programmer](images/image-19.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/image-19.png" width="300" >
+
 
 4. Download Espressif Flash Download Tools from Tools | Espressif Systems
 5. Unzip and execute the Flash Download tool from the downloaded zip package. 
 6. If asked, select the ESP8266 ChipType and Develop as the WorkMode. Click OK to run the flash download tool.
 
-![Programmer](images/image-20.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/image-20.png" width="200" >
 
 7. Click the elipsis on the first two lines and make sure to select certs.bin and fw.bin from the package downloaded from the KDL page. Those files are located on the bin folder after unziping the package.  Use 0x0 as the start address for fw.bin and 0xbb000 for certs.bin. Also make sure to select the same COM port as the port identified previously as being used by the CH340 programmer. Reference to the picture below when running the flash download tool to program your ESP8266 module.
 
