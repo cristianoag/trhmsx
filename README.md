@@ -9,6 +9,9 @@ This modern approach not only preserves the nostalgia associated with MSX but al
 **WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
 
 # TRHMSX - A Simple FPGA MSX2+ clone (with additional features)
+**WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
+
+# TRHMSX - A Simple FPGA MSX2+ clone (with additional features)
 
 This FPGA-based MSX2+ hardware represents a straightforward implementation, drawing inspiration from the original 1chipMSX circuit but featuring several enhancements and a new PCB design for improved functionality. Despite its advanced capabilities, the primary focus during development was on maintaining a low-cost solution.
 
@@ -62,6 +65,7 @@ To build the project you will need the following tools and resources:
 
 ## Programming
 
+### FPGA
 ### FPGA
 To program the FPGA you will need a USB Blaster. 
 [More info to come]
@@ -128,14 +132,23 @@ To use the microSD card you will need... [More info to come]
 ![Open Hardware](images/ccans.png)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+![Open Hardware](images/ccans.png)
 
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+* If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+* You may not use the material for commercial purposes.
+* You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 * If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 * You may not use the material for commercial purposes.
 * You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
 **ATTENTION**
+**ATTENTION**
 
 This project was made for the retro community and not for commercial purposes. So only retro hardware forums and individual people can build this project.
+This project was made for the retro community and not for commercial purposes. So only retro hardware forums and individual people can build this project.
 
+THE SALE OF ANY PART OF THIS PROJECT WITHOUT EXPRESS AUTHORIZATION IS PROHIBITED!
 THE SALE OF ANY PART OF THIS PROJECT WITHOUT EXPRESS AUTHORIZATION IS PROHIBITED!
 
