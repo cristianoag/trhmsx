@@ -17,7 +17,7 @@ The core of this system is the Cyclone I FPGA, accompanied by a few additional c
 
 | kicad 3D model | First prototype|
 |---------|---------|
-| ![Alt text](images/2024-02-25_20-27.png) | ![Alt text](images/20240229_213756238_iOS%20(Medium).jpg) |
+| ![Alt text](images/2024-02-25_20-27.png) | ![Alt text](images/20240313_182510806_iOS%20(Medium).jpg) |
 
 
 Programming the FPGA requires the well-known KDL ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
@@ -138,6 +138,15 @@ In the case of the TRHMSX, the +-12V lines are generated through a simple board 
 
 ### microSD Card
 To use the microSD card you will need... [More info to come]
+
+## Case
+
+The computer case is a combination of a 3D printed bed and a transparent acrylic top. 
+
+The STL file to print the case is available [here](case/TRHMSX_case_base_v1.5.stl). You will also need the file to print the cartridge guide [here](case/TRHMSX_cart_guide_v1.4.stl).
+
+The SVG and Light Burn files to cut the acrylic top are available [here](case/). 
+
 
 ## License
 
