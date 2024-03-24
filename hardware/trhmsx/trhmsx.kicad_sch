@@ -4497,7 +4497,6 @@
     )
   )
 
-
   (junction (at 458.47 346.71) (diameter 0) (color 0 0 0 0)
     (uuid 00a41f02-4ec7-4adf-b338-3bd65b3dd071)
   )
@@ -15556,7 +15555,7 @@
     (property "Value" "Conn_01x02" (at 71.12 268.605 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" (at 68.58 265.43 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 68.58 265.43 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 68.58 265.43 0)
