@@ -79,13 +79,13 @@ Follow the instructions on the README file to compile the appropriate files and 
 
 Connect your USB Blaster cable and use the Quartus programmer tool to upload the programming file to the EPCS4 flash.
 
-When you turn on your uMSX after assembling the PCB, all LEDs should lit. During programming they will flash, turn off and after boot, the uMSX will flash the last LED indicating it is loading the program to the FPGA chip, then it will lit only the LEDs that are correspondent to the configuration on the DIP switch bank.
+When you turn on your TRHMSX after assembling the PCB, all LEDs should lit. During programming they will flash, turn off and after boot, the TRHMSX will flash the last LED indicating it is loading the synthesis to the FPGA chip, then it will lit only the LEDs that are correspondent to the configuration on the DIP switch bank.
 
 Turn on 2 and 3 to have a 30Khz video and the last one (8) so you enable the SD card. If you need to understand what each dip switch does, check those files: DIP-SW User Manual or Zemmix Manual.
 
 ### Wireless Network Module
 
-Wireless network access in the TRH MSX is performed by the use of a 8266 ESP-01 module by Espressif and via the ESP8266 Wi-Fi Support Pack v1.0 shared by KDL as the result of the work of Oduvaldo Pavan Jr. The software created by Oduvaldo is licensed under the GNU Lesser General Public License v2.1 as open source and it is available both from the KDL original web page as well as directly from Oduvaldo's GitHub repository at https://github.com/ducasp/ESP8266-UNAPI-Firmware/ 
+Wireless network access in the TRHMSX is performed by the use of a 8266 ESP-01 module by Espressif and via the ESP8266 Wi-Fi Support Pack v1.0 shared by KDL as the result of the work of Oduvaldo Pavan Jr. The software created by Oduvaldo is licensed under the GNU Lesser General Public License v2.1 as open source and it is available both from the KDL original web page as well as directly from Oduvaldo's GitHub repository at https://github.com/ducasp/ESP8266-UNAPI-Firmware/ 
 
 Note: Oduvaldo has been working in optimized versions of the ESP8266 module to be used with other FPGA based computers and those may not be compatible with the TRHMSX. Please use the one shared by KDL as it was built to be used with the basic Verilog/VHDL ESEMSX.
 
