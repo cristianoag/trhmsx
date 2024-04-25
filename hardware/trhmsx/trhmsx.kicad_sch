@@ -6,8 +6,8 @@
 
   (title_block
     (title "TRHMSX - A simple MSX2+ clone in FPGA")
-    (date "2024-02-20")
-    (rev "1.2")
+    (date "2024-04-25")
+    (rev "1.3")
     (company "The Retro Hacker")
     (comment 1 "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License")
     (comment 2 "This work is licensed under a ")
