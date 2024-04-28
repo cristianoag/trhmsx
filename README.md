@@ -22,7 +22,7 @@ The core of this system is the Cyclone I FPGA, accompanied by a few additional c
 | ![Alt text](images/2024-02-25_20-27.png) | ![Alt text](images/20240313_182510806_iOS%20(Medium).jpg) |
 
 
-Programming the FPGA requires the well-known KDL ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
+Programming the FPGA requires the well-known KDL OCM-PLD  ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
 
 ## Features
 
@@ -136,19 +136,67 @@ After connecting the module to your wireless network you can use any UNAPI compa
 
 Certain MSX cartridges utilize both the +12V and -12V lines, such as specific variants of OPL4 cartridges and the RBSC Carnivore2. Those lines are crucial for powering the operational amplifiers responsible for audio output.
 
-In the case of the TRHMSX, the +-12V lines are generated through a simple board connected to the relevant pin headers on the motherboard. This board serves as a simple step-up mechanism and can easily be obtained from AliExpress here.
+In the case of the TRHMSX, the +-12V lines are generated through a simple DC Step-up Boost Converter module  connected to the relevant pin headers on the motherboard. 
+
+![DC Step-up Boost Converter module](images/image-36.png)
+
+The board is powered by the 5V line from the TRHMSX and generates the required +-12V lines. The board is then connected to the TRHMSX motherboard through the relevant pin headers, providing the necessary power for cartridges requiring both +12V and -12V lines.
+
+It can be ordered from AliExpress [here](https://www.aliexpress.com/item/32789671683.html?spm=a2g0o.order_list.order_list_main.16.36c21802vzMe7h).
 
 ### microSD Card
-To use the microSD card you will need... [More info to come]
+
+The microSD card is created by running two tools. The first will build the appropriate files for the card and the second will format, and copy the files to the card.
+
+To configure the files for your microSD card, follow the steps below:
+
+1. Download the latest version of the KDL OCM-SDBIOS pack from the KDL page [here](https://gnogni.altervista.org/).
+2. Unzip the downloaded file to a local folder on your PC.
+3. Open a command prompt and navigate to the folder where you unzipped the files.
+4. Run the make-sdb.cmd tool that is located inside the "make" folder. 
+5. Press ENTER on the first screen
+![drive](images/2024-04-27_21-33.png)
+6. On the Firmware Menu screen, select option 2 (default) and press ENTER
+![drive](images/2024-04-27_21-35.png)
+7. On the Disk-ROM Menu screen, select option 1 (default) and press ENTER
+![drive](images/2024-04-27_21-37.png)
+8. On the Main-ROM Menu screen, select option 2 (default) and press ENTER
+![drive](images/2024-04-27_21-38.png)
+9. On the Kanji-ROM Menu screen, select the option you want for the splash screen and press ENTER
+![drive](images/2024-04-27_21-40.png)
+10. On the Option-ROM Menu screen, select the option 2 to enable the ESP8266 Wifi BIOS for the TRHMSX and press ENTER.
+![drive](images/2024-04-27_21-41.png)
+11. On the Extra-ROM Menu screem, select option 3 (default) and press ENTER
+![drive](images/2024-04-27_21-42.png)
+
+
+Wait until the tool finishes creating the files. After that, you can folow the steps below to build the card using the files you just configured.
+
+
+1. Insert the microSD card into your PC.
+2. Run the SD Card building tool by executing the file named new-sdcard.cmd inside the "make" folder.
+3. Select the drive corresponding to your microSD card and press Enter. Optionally provide a name for the partition.
+ ![drive](images/2024-04-27_21-23.png)
+ 4. Press any key to create the partition and format the card.
+
+After creating the microSD card, insert it into the TRHMSX and turn on the computer. The TRHMSX will boot from the microSD card and you will see the MSX-DOS prompt.
+
+Optionally, install SofaRun and copy a few ROMs to the card to test the computer.
 
 ## Case
 
 The computer case is a combination of a 3D printed bed and a transparent acrylic top. 
 
+|3D model for the case|First prototype in the case|
+|---------|---------|
+|![](images/image-35.png)|![](images/20240318_212452009_iOS-Small.jpg)|
+
 The STL file to print the case is available [here](case/TRHMSX_case_base_v1.5.stl). You will also need the file to print the cartridge guide [here](case/TRHMSX_cart_guide_v1.4.stl).
 
+The acrylic top is cut from a 3mm transparent acrylic sheet.
 The SVG and Light Burn files to cut the acrylic top are available [here](case/). 
 
+![](images/20240427_212416648_iOS-Medium.jpg)
 
 ## License
 
