@@ -132,6 +132,37 @@ Using option 3 you can select a network to connect and provide appropriate crede
 
 After connecting the module to your wireless network you can use any UNAPI compatible tool from the computer. Just be aware that the AT firmware variant implemented by Oduvaldo doesn't support ICMP, thus the PING command that we normally use to test the OBSONETs and other traditional network cards will not work from the TRHMSX with the ESP8266 module.
 
+#### microSD Card
+
+The microSD card is created by running two tools. The first will build the appropriate files for the card and the second will format, and copy the files to the card.
+
+To configure the files for your microSD card, follow the steps below:
+
+1. Download the latest version of the KDL OCM-SDBIOS pack from the KDL page [here](https://gnogni.altervista.org/).
+2. Unzip the downloaded file to a local folder on your PC.
+3. Open a command prompt and navigate to the folder where you unzipped the files.
+4. Run the make-sdb.cmd tool that is located inside the "make" folder. 
+5. Press ENTER on the first screen
+6. On the Firmware Menu screen, select option 2 (default) and press ENTER
+7. On the Disk-ROM Menu screen, select option 1 (default) and press ENTER
+8. On the Main-ROM Menu screen, select option 2 (default) and press ENTER
+9. On the Kanji-ROM Menu screen, select the option you want for the splash screen and press ENTER
+10. On the Option-ROM Menu screen, select the option 2 to enable the ESP8266 Wifi BIOS for the TRHMSX and press ENTER.
+11. On the Extra-ROM Menu screem, select option 3 (default) and press ENTER
+
+
+Wait until the tool finishes creating the files. After that, you can folow the steps below to build the card using the files you just configured.
+
+
+1. Insert the microSD card into your PC.
+2. Run the SD Card building tool by executing the file named new-sdcard.cmd inside the "make" folder.
+3. Select the drive corresponding to your microSD card and press Enter. Optionally provide a name for the partition.
+ 4. Press any key to create the partition and format the card.
+
+After creating the microSD card, insert it into the TRHMSX and turn on the computer. The TRHMSX will boot from the microSD card and you will see the MSX-DOS prompt.
+
+Optionally, install SofaRun and copy a few ROMs to the card to test the computer.
+
 ### +12V/-12V Cartridge Lines
 
 Certain MSX cartridges utilize both the +12V and -12V lines, such as specific variants of OPL4 cartridges and the RBSC Carnivore2. Those lines are crucial for powering the operational amplifiers responsible for audio output.
@@ -143,46 +174,6 @@ In the case of the TRHMSX, the +-12V lines are generated through a simple DC Ste
 The board is powered by the 5V line from the TRHMSX and generates the required +-12V lines. The board is then connected to the TRHMSX motherboard through the relevant pin headers, providing the necessary power for cartridges requiring both +12V and -12V lines.
 
 It can be ordered from AliExpress [here](https://www.aliexpress.com/item/32789671683.html?spm=a2g0o.order_list.order_list_main.16.36c21802vzMe7h).
-
-### microSD Card
-
-The microSD card is created by running two tools. The first will build the appropriate files for the card and the second will format, and copy the files to the card.
-
-To configure the files for your microSD card, follow the steps below:
-
-1. Download the latest version of the KDL OCM-SDBIOS pack from the KDL page [here](https://gnogni.altervista.org/).
-2. Unzip the downloaded file to a local folder on your PC.
-3. Open a command prompt and navigate to the folder where you unzipped the files.
-4. Run the make-sdb.cmd tool that is located inside the "make" folder. 
-5. Press ENTER on the first screen
-![drive](images/2024-04-27_21-33.png)
-6. On the Firmware Menu screen, select option 2 (default) and press ENTER
-![drive](images/2024-04-27_21-35.png)
-7. On the Disk-ROM Menu screen, select option 1 (default) and press ENTER
-![drive](images/2024-04-27_21-37.png)
-8. On the Main-ROM Menu screen, select option 2 (default) and press ENTER
-![drive](images/2024-04-27_21-38.png)
-9. On the Kanji-ROM Menu screen, select the option you want for the splash screen and press ENTER
-![drive](images/2024-04-27_21-40.png)
-10. On the Option-ROM Menu screen, select the option 2 to enable the ESP8266 Wifi BIOS for the TRHMSX and press ENTER.
-![drive](images/2024-04-27_21-41.png)
-11. On the Extra-ROM Menu screem, select option 3 (default) and press ENTER
-![drive](images/2024-04-27_21-42.png)
-
-
-Wait until the tool finishes creating the files. After that, you can folow the steps below to build the card using the files you just configured.
-
-
-1. Insert the microSD card into your PC.
-2. Run the SD Card building tool by executing the file named new-sdcard.cmd inside the "make" folder.
-3. Select the drive corresponding to your microSD card and press Enter. Optionally provide a name for the partition.
- ![drive](images/2024-04-27_21-23.png)
- 4. Press any key to create the partition and format the card.
- ![drive](images/2024-04-27_21-54.png)
-
-After creating the microSD card, insert it into the TRHMSX and turn on the computer. The TRHMSX will boot from the microSD card and you will see the MSX-DOS prompt.
-
-Optionally, install SofaRun and copy a few ROMs to the card to test the computer.
 
 ## Case
 
