@@ -178,6 +178,7 @@ Wait until the tool finishes creating the files. After that, you can folow the s
 3. Select the drive corresponding to your microSD card and press Enter. Optionally provide a name for the partition.
  ![drive](images/2024-04-27_21-23.png)
  4. Press any key to create the partition and format the card.
+ ![drive](images/2024-04-27_21-54.png)
 
 After creating the microSD card, insert it into the TRHMSX and turn on the computer. The TRHMSX will boot from the microSD card and you will see the MSX-DOS prompt.
 
