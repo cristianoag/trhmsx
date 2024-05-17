@@ -188,7 +188,7 @@ The STL file to print the case is available [here](case/TRHMSX_case_base_v1.5.st
 Additionally I made available covers for all case and top cover holes so you can protect the computer from dust when not using it. Those files are available on the case folder as well.
 
 The acrylic top is cut from a 3mm transparent acrylic sheet.
-The SVG and Light Burn files to cut the acrylic top are available [here](case/). If you decide to print the top cover with the transparent filament or resin, please use the following STL file [TRHMSX_Transucent_Cover.stl](case/TRHMSX_Transucent_Cover.stl)
+The SVG and Light Burn files to cut the acrylic top are available [here](case/). If you decide to print the top cover with the transparent filament or resin, please use the following STL file [TRHMSX_Translucent_Cover.stl](case/TRHMSX_Translucent_Cover.stl)
 
 ![](images/20240427_212416648_iOS-Medium.jpg)
 
