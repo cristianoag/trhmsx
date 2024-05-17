@@ -65,7 +65,7 @@ To build the project you will need the following tools and resources:
 ## Programming
 
 ### FPGA
-The firmware for the TRHMSX is based on the first generation esemsx VHDL/Verilog code. You can download the latest packages from KDL page here, or get the latest development versions directly from his GitHub here.
+The firmware for the TRHMSX is based on the first generation esemsx VHDL/Verilog code. You can download the latest packages from KDL page [here](https://gnogni.altervista.org/), or get the latest development versions directly from his GitHub [here](https://github.com/gnogni/ocm-pld-dev).
 
 If you are downloading from the page, you will need the OCM PLD Pack file. Download it and unzip its content in a local file on your PC. If you decide to use GitHub, clone the repository to your PC.
 
@@ -91,13 +91,13 @@ Note: Oduvaldo has been working in optimized versions of the ESP8266 module to b
 
 #### Programming the ESP8266 module
 
-To program the ESP-01 module you will need a CH340 USB to ESP8266 ESP01 Serial Programmer like the one shown in the below picture. You can purchase one of those directly from AliExpress here (the link is also available on the Bill of Materials table in this document).
+To program the ESP-01 module you will need a CH340 USB to ESP8266 ESP01 Serial Programmer like the one shown in the below picture. You can purchase one of those directly from AliExpress [here](https://www.aliexpress.com/item/32971145094.html?spm=a2g0o.order_list.order_list_main.30.768e1802iucYdq) (the link is also available on the Bill of Materials table in this document).
 
 <img src="images/image-18.png" width="200" height="300">
 
 Follow the instructions detailed below to program your ESP8266 module:
 
-1. Download the ESP8266 Wi-Fi Support Pack v1.0 from the KDL page here. 
+1. Download the ESP8266 Wi-Fi Support Pack v1.0 from the KDL page [here](https://gnogni.altervista.org/ocm/20210823%20ESP8266%20Wi-Fi%20Support%20Pack%20v1.0%20by%20KdL.7z). 
 2. Make sure the switch on the programmer is configured to PROG.
 3. Connect the ESP-01 module to the programmer and insert it to your PC USB port. Open device manager and check the COM port assigned to the programmer. Make sure you have the appropriate CG340 driver installed, if required download and install the driver from wch.cn/downloads/CH341SER_EXE.html
 
