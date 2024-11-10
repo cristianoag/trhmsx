@@ -1,0 +1,9 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "TRHMSX")(type "KiCad")(uri "${KIPRJMOD}/libraries/TRHMSX.kicad_sym")(options "")(descr ""))
+  (lib (name "PJRAN1X1U02AUX")(type "KiCad")(uri "${KIPRJMOD}/libraries/PJRAN1X1U02AUX.kicad_sym")(options "")(descr ""))
+  (lib (name "MD-40SM")(type "KiCad")(uri "${KIPRJMOD}/libraries/MD-40SM.kicad_sym")(options "")(descr ""))
+  (lib (name "LOGO_TRH")(type "KiCad")(uri "${KIPRJMOD}/libraries/LOGO_TRH.kicad_sym")(options "")(descr ""))
+  (lib (name "LOGO_MSX")(type "KiCad")(uri "${KIPRJMOD}/libraries/LOGO_MSX.kicad_sym")(options "")(descr ""))
+  (lib (name "CH55x")(type "KiCad")(uri "${KIPRJMOD}/libraries/CH55x.kicad_sym")(options "")(descr ""))
+)
