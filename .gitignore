@@ -1,4 +1,26 @@
-hardware/1.4/trhmsx/production/backups/*
-hardware/1.4/trhmsx/trhmsx-backups/*
-hardware/1.5/trhmsx/production/backups/*
-hardware/1.5/trhmsx/trhmsx-backups/*
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+# Format documentation: http://kicad-pcb.org/help/file-formats/
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*~
+_autosave-*
+*.tmp
+*-rescue.lib
+*-save.pro
+*-save.kicad_pcb
+*-backups
+*backups
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+# firmware build
+software/hidman-micro/firmware/build/*
