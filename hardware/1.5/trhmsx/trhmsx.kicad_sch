@@ -6,8 +6,8 @@
 	(paper "A2")
 	(title_block
 		(title "TRHMSX - A simple MSX2+ clone in FPGA")
-		(date "2024-11-10")
-		(rev "1.5")
+		(date "2024-12-31")
+		(rev "1.51")
 		(company "The Retro Hacker")
 		(comment 1 "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License")
 		(comment 2 "This work is licensed under a ")
@@ -31325,6 +31325,17 @@
 		)
 		(uuid "3591b8a0-a383-4992-b9e7-28442f0590b4")
 	)
+	(label "VR_SC"
+		(at 439.42 91.44 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "35d8e72c-1501-45f5-8e4c-818d0652315a")
+	)
 	(label "IO9"
 		(at 345.44 60.96 0)
 		(fields_autoplaced yes)
@@ -32017,17 +32028,6 @@
 			(justify right bottom)
 		)
 		(uuid "56bd9659-f74d-45a7-b709-b0a7794b55bc")
-	)
-	(label "VR_SC"
-		(at 439.42 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "56ccb695-96aa-4f34-8b85-9d00003cc99f")
 	)
 	(label "MA2"
 		(at 107.95 129.54 0)
@@ -34339,17 +34339,6 @@
 		)
 		(uuid "cedd8123-29a1-4cb2-a2cd-570c524191e4")
 	)
-	(label "VG_SY"
-		(at 439.42 91.44 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "cff2b3e3-c0d1-4429-80a4-53a4446e62c9")
-	)
 	(label "SLTSL2"
 		(at 490.22 279.4 0)
 		(fields_autoplaced yes)
@@ -34976,6 +34965,17 @@
 			(justify left bottom)
 		)
 		(uuid "f4494dcf-bc46-43ac-b321-43f9e9ba874b")
+	)
+	(label "VG_SY"
+		(at 439.42 88.9 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f49f8a9e-d9e3-431d-bf9f-0ed2da7f3200")
 	)
 	(label "MD0"
 		(at 402.59 266.7 0)
@@ -49951,7 +49951,7 @@
 		(lib_id "Graphic:Logo_Open_Hardware_Small")
 		(at 553.72 365.76 0)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board no)
 		(dnp no)
@@ -49994,15 +49994,6 @@
 			)
 		)
 		(property "Description" "Open Hardware logo, small"
-			(at 553.72 365.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" "0"
 			(at 553.72 365.76 0)
 			(effects
 				(font
