@@ -24,3 +24,4 @@ _autosave-*
 
 # firmware build
 **/build/*
+**/.vscode
