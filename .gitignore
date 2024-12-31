@@ -23,4 +23,4 @@ _autosave-*
 *.ses
 
 # firmware build
-software/hidman-micro/firmware/build/*
+**/build/*
