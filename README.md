@@ -217,7 +217,7 @@ Using option 3 you can select a network to connect and provide appropriate crede
 
 After connecting the module to your wireless network you can use any UNAPI compatible tool from the computer. Just be aware that the AT firmware variant implemented by Oduvaldo doesn't support ICMP, thus the PING command that we normally use to test the OBSONETs and other traditional network cards will not work from the TRHMSX with the ESP8266 module.
 
-#### microSD Card
+### microSD Card
 
 The microSD card is created by running two tools. The first will build the appropriate files for the card and the second will format, and copy the files to the card.
 
