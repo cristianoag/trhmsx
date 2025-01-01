@@ -6,7 +6,7 @@ This synthesis enables enthusiasts to experience the charm of MSX systems withou
 
 This modern approach not only preserves the nostalgia associated with MSX but also opens up possibilities for enhancements and customizations. FPGA synthesis ensures that the MSX spirit endures, catering to both seasoned aficionados and new generations eager to explore the roots of personal computing.
 
-**WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
+> **WARNING!** If you use this project to implement your own hardware, remember as per the license you must release the modified files under the same license. I've seen multiple projects based on files I publish on Github that were never released to the public, and I think that's a shame (and violation of the license!).
 
 # TRHMSX - A Simple FPGA MSX2+ clone
 
@@ -15,26 +15,28 @@ This FPGA-based MSX2+ hardware represents a straightforward implementation, draw
 The core of this system is the Cyclone I FPGA, accompanied by a few additional components. The PCB is a 4-layer board measuring 12x15 cm. The FPGA is a 240-pin package, which is challenging to solder manually. Instead, using an SMT oven or a hot air station is advised for optimal results. For those opting for a hot air station, employing a stencil to apply solder paste is highly recommended, significantly streamlining the assembly process.
 
 
-| kicad 3D model | First prototype|
+| Kicad 3D Model | TRHMSX Computer |
 |---------|---------|
-| ![Alt text](images/2024-02-25_20-27.png) | ![Alt text](images/20240313_182510806_iOS%20(Medium).jpg) |
+| ![Alt text](images/2025-01-01_06-55.png) | ![Alt text](images/20240313_182510806_iOS%20(Medium).jpg) |
 
 
-Programming the FPGA requires the well-known KDL OCM-PLD  ESE MSX2+ core, available for download [here](https://gnogni.altervista.org/). This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
+Programming the FPGA requires the well-known OCM-PLD ESE MSX2+ core maintained by @gnogni (aka KDL), available for download [here](https://gnogni.altervista.org/) with the main development repository located at https://github.com/gnogni/ocm-pld-dev. This core ensures the proper functioning of the MSX2+ hardware, providing users with a reliable and authentic MSX experience on this FPGA-based system.
 
 ## Features
 
 * **MSX2+ Compatibility**: Reproducing the MSX2+ architecture, ensuring compatibility with a wide range of software and games.
 * **Expanded Memory Options**: Choose between 2MB or 4MB of mapped RAM, providing users with flexibility for diverse computing needs and applications.
 * **9958 Video Display Processor (VDP)**: Incorporating the 9958 VDP for sharp graphics and improved visual performance, delivering an authentic MSX experience.
+* **S-Video or VGA/RGB Video Output**: Supporting S-Video output for enhanced video quality or VGA/RGB output for compatibility with modern displays.
 * **FM and SCC Sound Capabilities**: Featuring FM synthesis and SCC sound to reproduce the iconic audio characteristics of MSX systems, enhancing the overall gaming and multimedia experience.
 * **Programmable Sound Generator (PSG)**: Including the original PSG for standard MSX audio output.
-* **Keyboard Compatibility**: Supporting PS/2 keyboards with the option for USB keyboards, providing users with a choice for their preferred input device.
+* **Keyboard Compatibility**: Supporting modern USB or PS/2 keyboards, providing users with a choice for their preferred input device.
 * **MicroSD Card Support**: Integrating a microSD card slot for convenient storage and easy access to files, games, and software.
 * **MSX Cartridge Slots**: Equipped with two MSX cartridge slots, allowing users to explore a vast library of MSX cartridges for an extended range of applications and games.
 * **Dual Joystick Ports**: Featuring two joystick ports for multiplayer gaming and compatibility with classic MSX peripherals.
 * **Wireless Network Support**: Incorporating wireless network support through the ESP8266, enabling online connectivity and expanding the possibilities for networked applications.
 * **12V Cartridge Lines**: Providing dedicated 12V lines for cartridges, ensuring compatibility with a variety of peripherals and accessories.
+* **Customizable Case Design**: Offering a 3D-printed base and transparent acrylic top cover, allowing users to customize the appearance of their TRHMSX system.
 
 ## Open Source
 
@@ -42,18 +44,67 @@ This project stands as a testament to the spirit of open source collaboration. O
 
 What sets this initiative apart is its commitment to transparency. From the project's inception, the goal was clear: to share all design files openly. This includes not only the schematics and PCB layout but also the Bill of Materials (BOM) and any other essential documentation for recreating the project.
 
-In stark contrast to its predecessors, this project was conceived with a dedication to community collaboration. If you choose to utilize these resources to construct your own MSX2+ clone or find ways to enhance it, I encourage you to contribute back to the community. Share your experiences, document any improvements you make, and actively participate in the collective evolution of this open source endeavor.
+In contrast to its predecessors, this project was conceived with a dedication to community collaboration. If you choose to utilize these resources to construct your own MSX2+ clone or find ways to enhance it, I encourage you to contribute back to the community. 
+
+Share your experiences, document any improvements you make, and actively participate in the collective evolution of this open source initiative.
 
 Let this project serve as a reminder of the **reciprocal nature of open source**. By using and benefiting from open source projects, it becomes a responsibility to give back, ensuring the continued growth and enrichment of the shared knowledge pool within the community.
 
 ## Bill of materials
 
-The following links provide the Bill of Materials for the TRHMSX project:
+The following table provides a comprehensive list of components required to build the latest version of the TRHMSX project. The BOM details the components, quantities, and references for each part.
 
-* [v1.40 BOM](hardware/1.4/README.MD)
-* [v1.51 BOM](hardware/1.5/README.MD)
+I also provide links to the components on AliExpress or other sources, making it easier for you to purchase the necessary parts. 
 
-The BOM includes all the components required to build the TRHMSX project. The list is organized by category, providing details on the components, quantities, and references for each part.
+ > **Note:** I don't have any affiliation with the sellers or guarantee the quality of the products. Please make sure to check the specifications and compatibility of the components before purchasing them.
+
+| **Reference** | **Value** | **Description** | **Qty** | **Link** |
+|---------------|-----------|-----------------|---------|----------|
+| **PCB**       |           |                 |         |          |
+| TRHMSX PCB    | N/A       | Custom Printed Circuit Board for the TRHMSX 1.51 | 1 | [Gerber Files](hardware/trhmsx/production/TRHMSX_-_The_simple_MSX2_clone_in_FPGA_1.51.zip) |
+| **Integrated Circuits (ICs)** | | | | |
+| U1            | EP1C12Q240C8N | FPGA Cyclone Family 12060 Cells 275.03MHz 130nm Technology 1.5V 240-Pin PQFP | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DEfxPNr) |
+| U2            | AMS1117-1.5V | LOW DROPOUT VOLTAGE REGULATOR (1.5V) | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DEu6go1) |
+| U3            | AMS1117-3.3V | LOW DROPOUT VOLTAGE REGULATOR (3.3V) | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DEu6go1) |
+| U4            | NC7WZU04P6X | Dual Unbuffered Inverter | 1 | [AliExpress](https://s.click.aliexpress.com/e/_Dk6F9y9) |
+| U5            | MT48LC16M16A2TG | 256Mb (4 Megabit x 16 x 4 banks) SYNCHRONOUS DRAM | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DmOI4S5) |
+| U6            | M51953BFP | Voltage Detector and System Reset IC | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DnqwGxB) |
+| U7            | CH559T | USB Host Micro-controller | 1 | [AliExpress](https://s.click.aliexpress.com/e/_oBU50ZV) |
+| U8            | EPCS4 | 4 Mbit Serial Flash Memory (Altera Configuration) | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DD2sMq9) |
+| **Resistors** |           |                 |         |          |
+| RN27, RN28, RN29, RN30, RN31, RN32, RN33, RN34 | 200R | 0603X4 200R Resistor Array | 8 | [AliExpress](https://s.click.aliexpress.com/e/_DFFkTit) |
+| RN1, RN2, RN3, RN4, RN5, RN6, RN7, RN8, RN9, RN10, RN11, RN13, RN14, RN15, RN16, RN19, RN20, RN21, RN22, RN23, RN36, RN37, RN38, RN39, RN40, RN41, RN42, RN43 | 100R | 0603X4 100R Resistor Array | 28 | [AliExpress](https://s.click.aliexpress.com/e/_DFFkTit) |
+| RN12, RN25, RN26, RN35, RN44 | 10KR | 0603X4 10K R Resistor Array | 5 | [AliExpress](https://s.click.aliexpress.com/e/_DFFkTit) |
+| RN17, RN18, RN24 | 1KR | 0603X4 1K R Resistor Array | 3 | [AliExpress](https://s.click.aliexpress.com/e/_DFFkTit) |
+| R5, R12 | 1KR | 0805 1KR Resistor | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R13, R14 | 2.2KR | 0805 2.2KR Resistor | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R1, R2 | 10KR | 0805 10KR Resistor | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R3, R7 | 10R | 0805 10R Resistor | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R8, R9 | 100R | 0805 100R Resistor | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R10 | 22R | 0805 22R Resistor | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| R11 | 1MR | 0805 1MR Resistor | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DDTBoqV) |
+| **Capacitors** |           |                 |         |          |
+| C2, C3, C4, C6, C7, C9, C10, C11, C12, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24 | 0.1uF | 0805 100nF Ceramic Capacitor (104) | 19 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C13, C14 | 27pF | 0805 27pF Ceramic Capacitor (270) | 2 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C26, C27 | 4.7uF | 0805 4.7uF Ceramic Capacitor (475) | 2 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C33, C34 | 3.3uF | 0805 3.3uF Ceramic Capacitor (335) | 2 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C25 | 2.2uF | 0805 2.2uF Ceramic Capacitor (225) | 1 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C35 | 10uF | 0805 10uF Ceramic Capacitor (106) | 1 | [AliExpress](https://s.click.aliexpress.com/e/_Dkt1yD7) |
+| C1, C5, C8, C28, C29, C30, C31, C32 | 220uF | Electrolytic Capacitor SMD 220uF 10V | 8 | [AliExpress](https://s.click.aliexpress.com/e/_DFJZp0V) |
+| **LEDs and Switches** |    |                 |         |          |
+| D1, D2, D3, D4, D5, D6, D7, D8, D9, D10 | Any Color | LED 0805 SMD | 10 | [AliExpress](https://s.click.aliexpress.com/e/_DEuWUBP) |
+| SW1 | DIP-SW-8P-RED-90G | Slide Type DIP Sided 90° Switch Module 8Pin Position Way 2.54mm Pitch Red Toggle Switch Blue Snap Switch Dial Switch | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DdFF8Qd) |
+| SW2 | BUTDIP90G6x6x12 | Momentary Tactile Tact Push Button Switch Right Angle Horizontal holder With Stent 6*6*12/mm | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DdTON3T) |
+| SW3 | BUTSMD180G6x6x4 | 6x6x4.3mm SMD Tactile Push Button Switch 4 Pin | 1 | [AliExpress](https://s.click.aliexpress.com/e/_ophZTzp) |
+| **Connectors** |           |                 |         |          |
+| J3 | DC-005 | Female DC Power Jack supply socket 5.5X2.5mm DC-005 5.5-2.5MM Barrel | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DdYmFPj) |
+| J11 | PJ-307 | 3.5mm Stereo Jack Socket Audio Jack Connector PCB 3F07 PJ-307 | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DCBm6IH) |
+| J4 | MICROSDCARDHOLDER-F | MICROSD Card Holder Card Slot Card Holder Mobile Phone Memory Card Holder With Self-Elastic Long And Short Body | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DeHRUZx) |
+| J7 | PS26P-B | Keyboard socket PS2 6P black socket 6-pin Connector | 1 | [AliExpress](https://s.click.aliexpress.com/e/_Dci00lF) |
+| J14 | DH15-F-SHORT-B | DH15 DR15 VGA Adapter Socket 3Rows Blue Parallel Port 15 Pin D Sub 15 Way PCB 90 Degree Female Connector | 1 | [AliExpress](https://s.click.aliexpress.com/e/_DEoqLMl) |
+| J13, J16 | EDGE-50P | Edge Card Connector PCB Gold Finger 50 Pin | 2 | [AliExpress](https://s.click.aliexpress.com/e/_DkkR9k9) |
+| J1 | PH-254-S-F-40 | Round Hole Pin Header 2.54MM Pitch Row Female, Single Row 1x40P | 1 | [AliExpress](https://s.click.aliexpress.com/e/_oFPYktN) |
+
 
 ## Building
 
@@ -64,13 +115,11 @@ To build the project you will need the following tools and resources:
 * [USB Blaster drivers](https://fpgasoftware.intel.com/18.1/?edition=lite&platform=windows&download_manager=dlm3)
 * [OCM-PLD Pack](https://gnogni.altervista.org/ocm/20221127%20OCM-PLD%20Pack%20v3.9.1%20by%20KdL.7z)
 
-Note: Please check the BOM pages for additional building instructions that are specific to each version of the project. 
+To guide the building process I recommend use the interactive BOM available here [here](https://htmlpreview.github.io/?https://github.com/cristianoag/trhmsx/blob/main/hardware/trhmsx/bom/ibom.html). As you get all the required parts and PCB, use the interactive BOM to check the components and their placement.
 
 ## Programming
 
-The programming of the TRHMSX is divided into three main parts: the FPGA, the wireless network module, and the microSD card.
-
-Note: Please check the BOM pages for additional programming instructions that are specific to each version of the project. 
+The programming of the TRHMSX is divided into four main parts: the FPGA, the wireless network module, the USB host micro-controller, and the microSD card.
 
 ### FPGA
 The firmware for the TRHMSX is based on the first generation esemsx VHDL/Verilog code. You can download the latest packages from KDL page [here](https://gnogni.altervista.org/), or get the latest development versions directly from his GitHub [here](https://github.com/gnogni/ocm-pld-dev).
@@ -81,7 +130,7 @@ After the unzip, go to the latest version folder and navigate to esemsx3 folder.
 
 Scrolling down on KDL page you will see a link to download the right version of Quartus. Download and install it.
 
-Note: I had issues with driver certificated for the USB blaster after installing this old version of Quartus. My USB blaster stopped working as the certificates for the driver in v11 are already expired. I reinstalled Quartus 20.1 after and everything worked fine.
+> **Note:** I had issues with driver certificates for the USB blaster after installing this old version of Quartus. My USB blaster stopped working as the certificates for the driver in v11 are already expired. I reinstalled the latest version of Quartus on the same PC and everything worked fine after that.
 
 Follow the instructions on the README file to compile the appropriate files and program your FPGA. Make sure to follow the instruction to convert the programming file and incorporate the emsx_top_304k.cof file, that way you will have an MSX computer with the EPBIOS. Those steps ensure that you will have the basic BIOS together with the programming file stored on the EPCS4, that will be useful in case you have any issues with the microSD card slot.
 
@@ -89,7 +138,35 @@ Connect your USB Blaster cable and use the Quartus programmer tool to upload the
 
 When you turn on your TRHMSX after assembling the PCB, all LEDs should lit. During programming they will flash, turn off and after boot, the TRHMSX will flash the last LED indicating it is loading the synthesis to the FPGA chip, then it will lit only the LEDs that are correspondent to the configuration on the DIP switch bank.
 
-Turn on 2 and 3 to have a 30Khz video and the last one (8) so you enable the SD card. If you need to understand what each dip switch does, check those files: DIP-SW User Manual or Zemmix Manual.
+Turn on 2 and 3 to have a 31Khz video and the last one (8) so you enable the SD card. If you need to understand what each dip switch does, check the doc file that is available [here](/docs/TRHMSX_1.5_Quick_Guide_EN.docx).
+
+### USB Host Micro-controller
+
+The latest version of the TRHMSX uses a CH559T micro-controller to handle the USB keyboard interface. That offers the possibility to use almost any USB keyboard with the computer, and not only the ones compatible with the PS/2 protocol.
+
+The circuit from the [HIDMAN micro project](https://github.com/serisman/HIDman-mini/tree/main/KiCad%20PCBs/HIDman-micro) by [@serisman](https://github.com/serisman), based on the [original HIDMAN project](https://github.com/rasteri/HIDman/tree/main) by [Andy (@rasteri)](https://github.com/rasteri) was implemented on the computer. The solution uses the CH559T microcontroller from WCH (Nanjing QinHeng Electronics), a versatile 8051-based chip designed for USB applications.
+
+The HIDMAN micro hardware and firmware offer a reliable way to adapt USB keyboards for PS/2 devices. Open-source hardware truly shines here, allowing to build on the amazing work of the community. Huge thanks to @rasteri and @serisman for their contributions!
+
+To enable USB keyboard support, you’ll need to program the CH559 microcontroller. Here’s how:
+
+1. **Prepare Your Tools**:
+    * Download the WCH ISP Tool from [WCH’s website](https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html) or from the TRHMSX GitHub repository if needed. I have a copy of the tool available [here](/software/WCHISPTool_Setup.exe).
+    * If you are using macOS or Linux, install the [ch55xtool](https://github.com/MarsTechHAN/ch552tool).
+
+2. **Connect Your Hardware**:
+    * Power off the TRHMSX.
+    * Use a USB A-to-A cable to connect the TRHMSX to your computer.
+
+3. **Program the MCU**:
+    * Launch the WCH ISP Tool and select the E8051 USB MCUs family.
+    * Ensure the CH559 model is detected. If it isn’t, check the chip installation or bootloader status.
+    * Download the pre-configured firmware for TRHMSX from the GitHub repository [here](/hardware/hidman-micro/firmware/dist/hidman.hex).
+    * Follow the tool’s prompts to upload the firmware. Please refer to the following images for the tool configuration.
+
+| WCH ISP Configuration| Firmware Download |
+|---------|---------|
+| ![WCH ISP Tool](/images/u7ev7r1h.png) | ![WCH ISP Tool Configuration](/images/trtk1c5n.png) |
 
 ### Wireless Network Module
 
