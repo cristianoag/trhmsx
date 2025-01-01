@@ -50,8 +50,8 @@ Let this project serve as a reminder of the **reciprocal nature of open source**
 
 The following links provide the Bill of Materials for the TRHMSX project:
 
-[v1.40 BOM](hardware/1.4/README.MD)
-[v1.51 BOM](hardware/1.5/README.MD)
+* [v1.40 BOM](hardware/1.4/README.MD)
+* [v1.51 BOM](hardware/1.5/README.MD)
 
 The BOM includes all the components required to build the TRHMSX project. The list is organized by category, providing details on the components, quantities, and references for each part.
 
