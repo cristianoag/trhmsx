@@ -1,6 +1,6 @@
 # Introduction
 
->Unfortunately, there have been reports of unauthorized sales of this computer on platforms like Tindie, AliExpress and othe obscure chinese Marketplaces. We kindly ask you to support and reward the original creators of this project, who have generously shared their work with the retro community, rather than those engaging in unauthorized distribution. Thank you for respecting the creators' efforts and intentions.
+>Unfortunately, there have been reports of unauthorized sales of this computer on platforms like Tindie, AliExpress and other obscure chinese marketplaces. We kindly ask you to support and reward the original creators of this project, who have generously shared their work with the retro community, rather than those engaging in unauthorized distribution. Thank you for respecting the creators' efforts and intentions.
 
 MSX computers hold a significant place in computing history, and their legacy continues to be celebrated through innovative approaches like FPGA synthesis. Field-Programmable Gate Arrays (FPGAs) provide a unique platform for recreating the MSX architecture, offering a flexible and efficient way to re-create the hardware. 
 
